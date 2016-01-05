@@ -61,6 +61,7 @@
 // outputting json
 var http = require('http');
 var fs = require('fs');
+var moment = require('moment');
 
 http.createServer(function(req, res) {
   // setting up routes with if statement
@@ -72,7 +73,8 @@ http.createServer(function(req, res) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     var obj = {
       firstname: 'Jimmy',
-      lastname: 'Corn'
+      lastname: 'Corny',
+      time: moment().format('ddd, hA')
     }
     // serialize the object data to json format to be retrieved by a client which will deserialize back to object format
     res.end(JSON.stringify(obj));
