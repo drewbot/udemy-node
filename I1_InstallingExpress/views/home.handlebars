@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Example App - Home</title>
     <link href=/assets/styles.css type=text/css rel=stylesheet />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <body>
   {{#if showTitle}}
@@ -11,5 +12,19 @@
   {{/if}}
   <p>{{foo}}</p>
   <p>{{bar}}</p>
+  <form method="POST" action="/person">
+    Firstname: <input type="text" id="firstname" name="firstname"><br>
+    Lastname: <input type="text" id="lastname" name="lastname"><br>
+    <input type="submit">
+  </form>
+  <script type="text/javascript">
+    // $.ajax({
+    //   type: 'POST',
+    //   url: '/personjson',
+    //   data: JSON.stringify({firstname: 'Jimmy', lastname: 'Crack Corn'}),
+    //   dataType: 'json',
+    //   contentType: 'application/json'
+    // });
+  </script>
 </body>
 </html>
